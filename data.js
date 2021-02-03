@@ -216,7 +216,7 @@ document.addEventListener('keydown',keyPress)
 function keyPress(e)
 {
 document.getElementById('after_press').innerHTML=`
-  <h3 id="keycode">${e.which}</h3>
+  <h3 id="keycode"style="color:whitesmoke;">${e.which}</h3>
   <h3 class="style">${e.key}</h3>
   <h3 class="style">${e.code}</h3>
   <h3 class="style">${e.ctrlKey}</h3>

@@ -1,6 +1,6 @@
 #after_press{
     width: 70%;
-    background-color: red;
+    background-color:#4e9caf;
     border-radius: 25px;
     text-align: center;
     margin: auto;
@@ -15,7 +15,8 @@
     margin: 5px;
     padding: 10px;
     text-align: center;
-    background-color: aqua;
+    background-color: whitesmoke;
     border-radius: 5px;
+    color: rgb(133, 77, 105);
      
 }
