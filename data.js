@@ -168,7 +168,7 @@ const keyCodes = {
     223: '`',
     224: 'left or right ⌘ key (firefox)',
     225: 'altgr',
-    226: '< /git >, left back slash',
+  226: '< /git >, left back slash',
     230: 'GNOME Compose Key',
     231: 'ç',
     233: 'XF86Forward',
@@ -180,9 +180,60 @@ const keyCodes = {
     244: 'kanji',
     251: 'unlock trackpad (Chrome/Edge)',
     255: 'toggle touchpad',
-};
-var x;
-for(x in keyCodes)
-{
-  document.getElementById("table").innerHTML+="<tr><td>"+x+"</td><td>"+keyCodes[x]+"</td></tr>"
 }
+
+var x,y;
+
+for (x in keyCodes) {
+  document.getElementById("table_data").innerHTML +=`<td > ${x}</td>
+                                                      <td>${keyCodes[x]}</td>
+  `;
+}
+
+function f1()
+{
+ var table = document.getElementById('table');
+var data = document.getElementById('after_press');
+
+
+  table.style.display ='block';
+  data.style.display='none';
+
+  var button_status = document.getElementById('show_button')
+  
+  button_status.style.display='none';
+
+}
+
+
+function f2(){
+  var element = document.body;
+  element.classList.toggle("theme");
+}
+
+document.addEventListener('keydown',keyPress)
+
+function keyPress(e)
+{
+document.getElementById('after_press').innerHTML=`
+  <h3 id="keycode">${e.which}</h3>
+  <h3 class="style">${e.key}</h3>
+  <h3 class="style">${e.code}</h3>
+  <h3 class="style">${e.ctrlKey}</h3>
+  <h3 class="style">${e.shiftKey}</h3>
+  <h3 class="style">${e.altKey}</h3>
+  <h3 class="style">${e.metaKey}</h3>
+  
+ 
+  `;
+  document.getElementById('table').style.display="none";
+
+  document.getElementById('after_press').style.display="block";
+
+  var button_status = document.getElementById('show_button').style.display='inline';
+  
+}
+
+
+
+
